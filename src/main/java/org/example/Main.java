@@ -19,5 +19,8 @@ public class Main {
         System.out.println(context.getMessage("hi", null, Locale.ENGLISH));
         System.out.println(context.getMessage("hi", null, Locale.CHINA));
 
+        // Environment 功能
+        System.out.println(context.getEnvironment().getProperty("spring.server.port"));
+
     }
 }
