@@ -13,6 +13,24 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
+
+        // BeanFactory 功能
+        Object a = context.getBean("a");
+        System.out.println(a);
+
+        // MessageResource 功能
+        System.out.println(context.getMessage("hi", null, Locale.ENGLISH));
+        System.out.println(context.getMessage("hi", null, Locale.CHINA));
+
+        // Environment 功能
+        System.out.println(context.getEnvironment().getProperty("spring.server.port"));
+
+        // ResourcePatternResolver 功能
+        Resource[] resources = context.getResources("classpath*:META-INF/spring.factories");
+        for (Resource resource : resources) {
+            System.out.println(resource);
+        }
+
         // ApplicationEventPublisher 功能
         context.publishEvent(new MyEvent("hello"));
     }
