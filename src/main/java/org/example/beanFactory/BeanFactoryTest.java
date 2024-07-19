@@ -14,7 +14,7 @@ public class BeanFactoryTest {
 
         AbstractBeanDefinition singleton = BeanDefinitionBuilder.genericBeanDefinition(MyConfig.class).setScope("singleton").getBeanDefinition();
 
-
+        beanFactory.registerBeanDefinition("myConfig", singleton);
     }
 
     @Configuration
