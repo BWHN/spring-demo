@@ -1,5 +1,6 @@
 package org.example.beanFactory;
 
+import org.example.config.MyConfig;
 import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -27,17 +28,5 @@ public class BeanFactoryTest {
         beanFactory.getBeanNamesIterator().forEachRemaining(System.out::println);
 
     }
-
-    @Configuration
-    static class MyConfig {
-
-        @Bean
-        public Bean1 bean1() {
-            return new Bean1();
-        }
-
-    }
-
-    static class Bean1 {}
 
 }
