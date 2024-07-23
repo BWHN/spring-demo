@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.listener.MyEvent;
+import org.example.spring_function.SpringFunctionTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -13,25 +14,15 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
-
         // BeanFactory 功能
-        Object a = context.getBean("a");
-        System.out.println(a);
-
+        SpringFunctionTest.testBeanFactory(context);
         // MessageResource 功能
-        System.out.println(context.getMessage("hi", null, Locale.ENGLISH));
-        System.out.println(context.getMessage("hi", null, Locale.CHINA));
-
+        SpringFunctionTest.testMessageSource(context);
         // Environment 功能
-        System.out.println(context.getEnvironment().getProperty("spring.server.port"));
-
+        SpringFunctionTest.testEnvironment(context);
         // ResourcePatternResolver 功能
-        Resource[] resources = context.getResources("classpath*:META-INF/spring.factories");
-        for (Resource resource : resources) {
-            System.out.println(resource);
-        }
-
+        SpringFunctionTest.testResourcePatternResolver(context);
         // ApplicationEventPublisher 功能
-        context.publishEvent(new MyEvent("hello"));
+        SpringFunctionTest.testEventPublish(context);
     }
 }
