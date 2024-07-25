@@ -24,9 +24,13 @@ public class SpringFunctionTest {
     }
 
     public static void testResourcePatternResolver(ApplicationContext context) throws IOException {
-        Resource[] resources = context.getResources("classpath*:META-INF/spring.factories");
+        Resource[] resources = context.getResources("classpath:org/example/Main.class");
         for (Resource resource : resources) {
-            System.out.println(resource);
+            if (resource.exists()) {
+                System.out.println(resource.getFile());
+            } else {
+                System.out.println("file not exist");
+            }
         }
     }
 

@@ -1,14 +1,11 @@
 package org.example;
 
-import org.example.listener.MyEvent;
 import org.example.spring_function.SpringFunctionTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.io.Resource;
 
 import java.io.IOException;
-import java.util.Locale;
 
 @SpringBootApplication
 public class Main {
