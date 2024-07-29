@@ -1,4 +1,3 @@
 package org.example.bean;
 
-public class Bean1 {
-}
+public class Bean1 {}
