@@ -7,6 +7,7 @@ import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigUtils;
+import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 
 public class BeanFactoryTest {
 
@@ -18,8 +19,6 @@ public class BeanFactoryTest {
                 .setScope("singleton").getBeanDefinition();
         // 注册beanDefinition
         beanFactory.registerBeanDefinition("myConfig", singleton);
-        // 打印BeanFactory中的Bean
-        beanFactory.getBeanNamesIterator().forEachRemaining(System.out::println);
         // 向bean工厂加入Bean处理器
         AnnotationConfigUtils.registerAnnotationConfigProcessors(beanFactory);
         // 应用Bean处理器
