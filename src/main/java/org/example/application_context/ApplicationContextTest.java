@@ -2,6 +2,7 @@ package org.example.application_context;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 public class ApplicationContextTest {
@@ -18,6 +19,9 @@ public class ApplicationContextTest {
         for(String name : beanFactory.getBeanDefinitionNames()) {
             System.out.println(beanFactory.getBean(name));
         }
+        // 另一种调用
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        System.out.println(classPathXmlApplicationContext.getBean("bean2"));
     }
 
 }
