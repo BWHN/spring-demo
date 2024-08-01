@@ -3,6 +3,7 @@ package org.example.bean_factory;
 import org.example.config.MyConfig;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -19,12 +20,19 @@ public class BeanFactoryTest {
                 .setScope("singleton").getBeanDefinition();
         // 注册beanDefinition
         beanFactory.registerBeanDefinition("myConfig", singleton);
-        // 向bean工厂加入Bean处理器
+        // 向bean工厂加入BeanFactory后处理器、Bean后处理器
         AnnotationConfigUtils.registerAnnotationConfigProcessors(beanFactory);
-        // 应用Bean处理器
+        // 应用BeanFactory后处理器
         beanFactory.getBeansOfType(BeanFactoryPostProcessor.class).values().forEach(e -> e.postProcessBeanFactory(beanFactory));
+        // 应用Bean后处理器
+        beanFactory.getBeansOfType(BeanPostProcessor.class).values().forEach(beanFactory::addBeanPostProcessor);
         // 打印BeanFactory中的Bean
-        beanFactory.getBeanNamesIterator().forEachRemaining(System.out::println);
+        beanFactory.getBeanNamesIterator().forEachRemaining(e -> {
+            System.out.println(e);
+            if ("bean2".equals(e)) {
+                System.out.println(beanFactory.getBean(e));
+            }
+        });
     }
 
 }
