@@ -8,6 +8,18 @@ import org.springframework.core.io.ClassPathResource;
 public class ApplicationContextTest {
 
     public static void main(String[] args) {
+        // 测试 classpath xml
+        testClassPathXmlApplicationContext();
+        // classpath xml实现
+        testClassPathXmlApplicationContextOther();
+    }
+
+    private static void testClassPathXmlApplicationContext() {
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        System.out.println(classPathXmlApplicationContext.getBean("bean4"));
+    }
+
+    private static void testClassPathXmlApplicationContextOther() {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         System.out.println("读取之前...");
         for(String name : beanFactory.getBeanDefinitionNames()) {
@@ -19,9 +31,6 @@ public class ApplicationContextTest {
         for(String name : beanFactory.getBeanDefinitionNames()) {
             System.out.println(beanFactory.getBean(name));
         }
-        // 另一种调用
-        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-        System.out.println(classPathXmlApplicationContext.getBean("bean4"));
     }
 
 }
