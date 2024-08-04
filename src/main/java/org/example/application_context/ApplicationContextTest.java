@@ -12,6 +12,7 @@ public class ApplicationContextTest {
         testClassPathXmlApplicationContext();
         // classpath xml实现
         testClassPathXmlApplicationContextOther();
+        // annotation context实现
     }
 
     private static void testClassPathXmlApplicationContext() {
@@ -31,6 +32,10 @@ public class ApplicationContextTest {
         for(String name : beanFactory.getBeanDefinitionNames()) {
             System.out.println(beanFactory.getBean(name));
         }
+    }
+
+    private static void testAnnotationApplicationContext() {
+
     }
 
 }
