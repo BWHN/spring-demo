@@ -1,14 +1,12 @@
-package org.example.bean_factory;
+package org.example.test;
 
 import org.example.config.MyConfig;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigUtils;
-import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 
 public class BeanFactoryTest {
 

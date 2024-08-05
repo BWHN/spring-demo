@@ -1,4 +1,4 @@
-package org.example.spring_function;
+package org.example.test;
 
 import org.example.listener.MyEvent;
 import org.springframework.context.ApplicationContext;

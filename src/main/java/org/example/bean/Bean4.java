@@ -10,9 +10,7 @@ public class Bean4 {
 
     @Override
     public String toString() {
-        return "Bean4{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Bean4{name=" + name + "}";
     }
 
 }
