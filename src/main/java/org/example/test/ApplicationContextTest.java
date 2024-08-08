@@ -12,12 +12,12 @@ import org.springframework.core.io.ClassPathResource;
 public class ApplicationContextTest {
 
     public static void main(String[] args) {
-//        // 测试 classpath xml
-//        testClassPathXmlApplicationContext();
-//        // classpath xml实现
-//        testClassPathXmlApplicationContextOther();
-//        // annotation context实现
-//        testAnnotationConfigApplicationContext();
+        // 测试 classpath xml
+        testClassPathXmlApplicationContext();
+        // classpath xml实现
+        testClassPathXmlApplicationContextOther();
+        // annotation context实现
+        testAnnotationConfigApplicationContext();
         // annotation web实现
         testAnnotationConfigServletApplicationContext();
     }

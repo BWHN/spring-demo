@@ -11,15 +11,18 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
-        // BeanFactory 功能
-        SpringFunctionTest.testBeanFactory(context);
-        // MessageResource 功能
-        SpringFunctionTest.testMessageSource(context);
-        // Environment 功能
-        SpringFunctionTest.testEnvironment(context);
-        // ResourcePatternResolver 功能
-        SpringFunctionTest.testResourcePatternResolver(context);
-        // ApplicationEventPublisher 功能
-        SpringFunctionTest.testEventPublish(context);
+//        // BeanFactory 功能
+//        SpringFunctionTest.testBeanFactory(context);
+//        // MessageResource 功能
+//        SpringFunctionTest.testMessageSource(context);
+//        // Environment 功能
+//        SpringFunctionTest.testEnvironment(context);
+//        // ResourcePatternResolver 功能
+//        SpringFunctionTest.testResourcePatternResolver(context);
+//        // ApplicationEventPublisher 功能
+//        SpringFunctionTest.testEventPublish(context);
+
+        context.close();
+
     }
 }
