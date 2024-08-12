@@ -43,8 +43,8 @@ public class ApplicationContextTest {
 
     private static void testAnnotationConfigApplicationContext() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
-//        context.scan("org.example");
-//        context.refresh();
+        context.scan("org.example");
+        context.refresh();
         Object bean2 = context.getBean("bean2");
         System.out.println(bean2);
     }
