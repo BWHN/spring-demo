@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.mvc.Controller;
 
-//@Configuration
-public class MyWebConfig {
+@Configuration
+public class WebConfig {
 
     @Bean
     public ServletWebServerFactory servletWebServerFactory() {

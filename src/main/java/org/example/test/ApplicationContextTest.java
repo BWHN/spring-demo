@@ -1,7 +1,7 @@
 package org.example.test;
 
 import org.example.config.MyConfig;
-import org.example.config.MyWebConfig;
+import org.example.config.WebConfig;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebApplicationContext;
@@ -13,11 +13,11 @@ public class ApplicationContextTest {
 
     public static void main(String[] args) {
         // 测试 classpath xml
-        testClassPathXmlApplicationContext();
+//        testClassPathXmlApplicationContext();
         // classpath xml实现
-        testClassPathXmlApplicationContextOther();
+//        testClassPathXmlApplicationContextOther();
         // annotation context实现
-        testAnnotationConfigApplicationContext();
+//        testAnnotationConfigApplicationContext();
         // annotation web实现
         testAnnotationConfigServletApplicationContext();
     }
@@ -50,7 +50,8 @@ public class ApplicationContextTest {
     }
 
     private static void testAnnotationConfigServletApplicationContext() {
-        AnnotationConfigServletWebApplicationContext context = new AnnotationConfigServletWebApplicationContext(MyWebConfig.class);
+        AnnotationConfigServletWebApplicationContext context = new AnnotationConfigServletWebApplicationContext(WebConfig.class);
+
     }
 
 }
