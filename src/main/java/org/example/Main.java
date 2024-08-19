@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.test.SpringFunctionTest;
+import org.example.test.SpringFunctionTester;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,17 +12,17 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
 //        // BeanFactory 功能
-//        SpringFunctionTest.testBeanFactory(context);
+//        SpringFunctionTester.testBeanFactory(context);
 //        // MessageResource 功能
-//        SpringFunctionTest.testMessageSource(context);
+//        SpringFunctionTester.testMessageSource(context);
 //        // Environment 功能
-//        SpringFunctionTest.testEnvironment(context);
+//        SpringFunctionTester.testEnvironment(context);
 //        // ResourcePatternResolver 功能
-//        SpringFunctionTest.testResourcePatternResolver(context);
+//        SpringFunctionTester.testResourcePatternResolver(context);
 //        // ApplicationEventPublisher 功能
-//        SpringFunctionTest.testEventPublish(context);
+//        SpringFunctionTester.testEventPublish(context);
 
-        context.close();
+//        context.close();
 
     }
 }

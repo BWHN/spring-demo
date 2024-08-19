@@ -17,9 +17,9 @@ public class ApplicationContextTest {
         // classpath xml实现
 //        testClassPathXmlApplicationContextOther();
         // annotation context实现
-//        testAnnotationConfigApplicationContext();
+        testAnnotationConfigApplicationContext();
         // annotation web实现
-        testAnnotationConfigServletApplicationContext();
+//        testAnnotationConfigServletApplicationContext();
     }
 
     private static void testClassPathXmlApplicationContext() {
@@ -28,12 +28,14 @@ public class ApplicationContextTest {
     }
 
     private static void testClassPathXmlApplicationContextOther() {
+        // 创建BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         System.out.println("读取之前...");
         for(String name : beanFactory.getBeanDefinitionNames()) {
             System.out.println(name);
         }
         System.out.println("读取之后...");
+        //将从xml中读取到的Bean定义注册到BeanFactory
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         reader.loadBeanDefinitions(new ClassPathResource("bean4.xml"));
         for(String name : beanFactory.getBeanDefinitionNames()) {
@@ -43,15 +45,12 @@ public class ApplicationContextTest {
 
     private static void testAnnotationConfigApplicationContext() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
-        context.scan("org.example");
-        context.refresh();
         Object bean2 = context.getBean("bean2");
         System.out.println(bean2);
     }
 
     private static void testAnnotationConfigServletApplicationContext() {
         AnnotationConfigServletWebApplicationContext context = new AnnotationConfigServletWebApplicationContext(WebConfig.class);
-
     }
 
 }

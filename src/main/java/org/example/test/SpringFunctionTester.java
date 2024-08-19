@@ -7,7 +7,7 @@ import org.springframework.core.io.Resource;
 import java.io.IOException;
 import java.util.Locale;
 
-public class SpringFunctionTest {
+public class SpringFunctionTester {
 
     public static void testBeanFactory(ApplicationContext context) {
         Object a = context.getBean("a");
