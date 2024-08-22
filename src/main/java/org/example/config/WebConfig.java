@@ -10,22 +10,22 @@ import org.springframework.web.servlet.mvc.Controller;
 
 @Configuration
 public class WebConfig {
-
+    // 创建WebServerFactory
     @Bean
     public ServletWebServerFactory servletWebServerFactory() {
         return new TomcatServletWebServerFactory();
     }
-
+    // 创建请求分发器
     @Bean
     public DispatcherServlet dispatcherServlet() {
         return new DispatcherServlet();
     }
-
+    // 注册请求分发器到“/”路径
     @Bean
     public DispatcherServletRegistrationBean registrationBean(DispatcherServlet dispatcherServlet) {
         return new DispatcherServletRegistrationBean(dispatcherServlet, "/");
     }
-
+    // 创建请求处理器
     @Bean("/hello")
     public Controller controller1() {
         return (request, response) -> {
@@ -33,5 +33,4 @@ public class WebConfig {
             return null;
         };
     }
-
 }
