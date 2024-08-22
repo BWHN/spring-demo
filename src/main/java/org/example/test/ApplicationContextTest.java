@@ -50,8 +50,7 @@ public class ApplicationContextTest {
     }
 
     private static void testAnnotationConfigServletApplicationContext() {
-        AnnotationConfigServletWebServerApplicationContext context =
-                new AnnotationConfigServletWebServerApplicationContext(WebConfig.class);
+        new AnnotationConfigServletWebServerApplicationContext(WebConfig.class);
     }
 
 }
