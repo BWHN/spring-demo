@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.bean_post_processor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

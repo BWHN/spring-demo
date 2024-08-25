@@ -1,8 +1,8 @@
-package org.example.config;
+package org.example.bean_factory.config;
 
-import org.example.bean.Bean1;
-import org.example.bean.Bean2;
-import org.example.bean.Bean3;
+import org.example.bean_factory.bean.Bean1;
+import org.example.bean_factory.bean.Bean2;
+import org.example.bean_factory.bean.Bean3;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

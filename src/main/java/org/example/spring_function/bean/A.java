@@ -1,4 +1,4 @@
-package org.example.bean;
+package org.example.spring_function.bean;
 
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
-package org.example.test;
+package org.example.bean_factory;
 
-import org.example.config.MyConfig;
+import org.example.bean_factory.config.MyConfig;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigUtils;
 
-public class BeanFactoryTest {
+public class Main {
 
     public static void main(String[] args) {
         // ConfigurableListableBeanFactory、BeanDefinitionRegistry默认实现

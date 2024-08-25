@@ -1,4 +1,4 @@
-package org.example.config;
+package org.example.application_context.config;
 
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;

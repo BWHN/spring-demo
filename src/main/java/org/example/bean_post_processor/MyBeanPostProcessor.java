@@ -1,7 +1,6 @@
-package org.example.beanpostprocessor;
+package org.example.bean_post_processor;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.bean.LifeCycleBean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;

@@ -1,4 +1,4 @@
-package org.example.listener;
+package org.example.spring_function.listener;
 
 import org.springframework.context.ApplicationEvent;
 
