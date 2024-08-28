@@ -1,15 +1,16 @@
-package org.example.spring_function;
+package org.example.bean_post_processor;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.bean_post_processor.LifeCycleBean;
+import org.example.bean_post_processor.bean.LifeCycleBean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.beans.PropertyDescriptor;
 
-//@Component
+@Component
 @Slf4j
 public class MyBeanPostProcessor implements InstantiationAwareBeanPostProcessor, DestructionAwareBeanPostProcessor {
     @Override
