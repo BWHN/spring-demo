@@ -20,7 +20,7 @@ public class Main {
         // @Resource @PostConstruct @PreDestroy
         context.registerBean(CommonAnnotationBeanPostProcessor.class);
         // @ConfigurationProperties
-        ConfigurationPropertiesBindingPostProcessor.register(context.getDefaultListableBeanFactory(););
+        ConfigurationPropertiesBindingPostProcessor.register(context.getDefaultListableBeanFactory());
 
         context.refresh();
         context.close();
